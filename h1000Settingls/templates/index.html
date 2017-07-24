@@ -1,0 +1,55 @@
+<head>
+<style type="text/css">
+.divForm{
+position: absolute;
+width: 300px;
+height: 390px;
+border: 1px solid red;
+text-align: center;
+top: 50%;
+left: 50%;
+margin-top: -200px;
+margin-left: -150px;
+}
+</style>
+</head>
+
+<body>
+<div id="divForm">
+<form action="form_action.jsp" method="get" style="height: 100%">
+  <p align="center">管理网IP地址: <input type="text" name="vip"/></p>
+<label>请选择节点个数</label> 
+<script type="text/javascript">
+	function generate_node_number_label_group(){
+		var node_number = document.getElementById("nodeNumber");
+		var index=node_number.selectedIndex;
+		var number=node_number.options[index].value;
+		var html = "";
+		for (var i=1;i<=number;++i){
+			html += '<p align="center">节点'+i+'地址: <input type="text" name="nodename'+i+'" /></p>';
+		}
+		document.getElementById("nodeSpan").innerHTML = html;
+	}
+</script>
+
+<select align="middle" id="nodeNumber" name="请选择节点个数" onchange="generate_node_number_label_group()"> 
+<option value="0">请选择</option> 
+<option value="1">1节点</option> 
+<option value="2">2节点</option> 
+<option value="3">3节点</option> 
+<option value="4">4节点</option> 
+<option value="5">5节点</option> 
+<option value="6">6节点</option> 
+<option value="7">7节点</option> 
+<option value="8">8节点</option> 
+<option value="9">9节点</option> 
+<option value="10">10节点</option> 
+</select> 
+  <span id="nodeSpan"></span>
+  <p align="center">管理网网关地址: <input type="text" name="nodegateeay" /></p>
+  <p align="center">管理网掩码地址: <input type="text" name="nodenetmast" /></p>
+  <p align="center">管理网DNS地址: <input type="text" name="nodedns" /></p>
+  <p align="center"><input type="submit" value="提交" /></p>
+</form>
+</div>
+</body>
