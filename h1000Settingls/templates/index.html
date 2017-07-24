@@ -16,7 +16,8 @@ margin-left: -150px;
 
 <body>
 <div id="divForm">
-<form action="form_action.jsp" method="get" style="height: 100%">
+<form action="/profile/" method="post" style="height: 100%">
+    {% csrf_token %}
   <p align="center">管理网IP地址: <input type="text" name="vip"/></p>
 <label>请选择节点个数</label> 
 <script type="text/javascript">
@@ -32,7 +33,7 @@ margin-left: -150px;
 	}
 </script>
 
-<select align="middle" id="nodeNumber" name="请选择节点个数" onchange="generate_node_number_label_group()"> 
+<select align="middle" id="nodeNumber" name="nodenumber" onchange="generate_node_number_label_group()">
 <option value="0">请选择</option> 
 <option value="1">1节点</option> 
 <option value="2">2节点</option> 

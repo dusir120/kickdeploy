@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^$', 'h1000Settingls.views.index'),  # new
+    url(r'^profile/$', 'h1000Settingls.views.profile'),
     url(r'^admin/', include(admin.site.urls)),
 ]
