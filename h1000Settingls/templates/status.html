@@ -1,0 +1,38 @@
+<html>
+<head>
+</head>
+<body>
+<script language="JavaScript">
+function myrefresh(){
+window.location.reload();
+}
+setTimeout('myrefresh()',1000); //指定1秒刷新一次
+
+$.ajax({
+type : "GET",
+ url : '/status/',
+ async:false,
+ cache :false,
+ dataType : "json",
+ success : function(json){
+ demo();
+}});
+
+function demo()
+{
+ $.ajax({
+ type : "GET",
+  url :'/status/',
+  async:false,
+  cache :false,
+  dataType : "json",
+  success : function(json){
+
+  }
+     });
+}
+
+</script>
+<pre>{{ string }}</pre>
+</body>
+</html>

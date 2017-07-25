@@ -1,0 +1,5 @@
+version
+/h1000Settingls/*.pyc
+/kickdeploy/*.pyc
+/utils/*.pyc
+/h1000Settingls/migrations/*.pyc
